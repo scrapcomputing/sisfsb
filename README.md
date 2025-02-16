@@ -8,7 +8,7 @@ It is heavily inspired by [VIAFSB](https://github.com/enaiel/viafsb) (many thank
 
 ## Chipsets
 
-- SiS 540 / SiS 630 (Only tested on SiS 540)
+- SiS 540 (Possibly also SiS 630 but not tested yet).
 
 ## PLLs
 
@@ -16,7 +16,7 @@ It is heavily inspired by [VIAFSB](https://github.com/enaiel/viafsb) (many thank
 
 # How to use
 
-- `SISFSB.EXE` and `CWSDPMI.EXE` need to be in the same directory
+- Download `SISFSB.EXE` and `CWSDPMI.EXE` from the releases and place them in the same directory
 - Run sisfsb:
 ```
 sisfsb -pll <PLL> -fsb <FSB>/<SDRAM>/<PCI>
@@ -24,7 +24,17 @@ sisfsb -pll <PLL> -fsb <FSB>/<SDRAM>/<PCI>
 
 For example:
 ```
-sisfsb -pll W83194R_630A -fsb 100.00/100.00/33.00
+sisfsb -pll W83194R-630A -fsb 100.00/100.00/33.00
+```
+
+To get the list of supported PLLs, run sisfsb with no arguments:
+```
+sisfsb
+```
+
+To get the list of supported frequencies of a given PLL, use `-fsb list` like:
+```
+sisfsb -pll <PLL> -fsb list
 ```
 
 # Build from source
